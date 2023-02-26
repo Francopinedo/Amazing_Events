@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EventsPage</title>
+</head>
+
+<body class="mr-5 ml-5 bg-dark text-light">
+
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <link rel="stylesheet" href="./style.css" />
-</head>
-
-<body class="">
-
     <header>
         <nav class="navbar navbar-expand-xxl fs-4 ">
             <div class="container-fluid">
@@ -26,7 +28,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
                         <li class="nav-item ">
                         <li class="nav-item ">
-                            <a class="nav-link  m-md-1 active text-light" aria-current="page" href="./index.html">Home</a>
+                            <a class="nav-link  m-md-1 " aria-current="page" href="./index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link  m-md-1 " aria-current="page" href="./upcoming_events.html">Upcoming
@@ -40,15 +42,17 @@
                             <a class="nav-link m-md-1 " aria-current="page" href="./contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link m-md-1 " aria-current="page" href="./stats.html">Stats</a>
+                            <a class="nav-link m-md-1 active text-light" aria-current="page" href="./stats.html">Stats</a>
                         </li>
                     </ul>
                 </div>
         </nav>
     </header>
 
-    <main class="m-md-1">
-        <div id="carouselExampleDark" class="carousel  slide" data-bs-ride="carousel">
+    <main class="m-md-1 d">
+        
+        <div id="carouselExampleDark " class="carousel  slide" data-bs-ride="carousel">
+           
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -57,7 +61,8 @@
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner ">
+                
                 <div class="carousel-item active" data-bs-interval="10000">
                     <img src="./assets/Music_Concert.jpg" class="w-100 img-carousel" alt="">
                     <div class="carousel-caption d-none d-md-block">
@@ -73,16 +78,21 @@
                     </div>
                 </div>
                 <div class="carousel-item">
+                   
                     <img src="./assets/Music_Concert.jpg" class="img-carousel w-100" alt="">
+                    
                     <div class="carousel-caption d-none d-md-block">
+                        
                         <h5>Third slide label</h5>
                         <p>Some representative placeholder content for the third slide.</p>
                     </div>
+                    
                 </div>
                 <DIV class="container-fluid position-absolute tittle">
-                    <h1 class="tittle-text justify-content-center align-items-center text-center mt-4" >HOME</h1>
+                    <h1 class="tittle-text justify-content-center align-items-center text-center mt-4" >STATS</h1>
                 </DIV>
             </div>
+            
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -93,59 +103,103 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+            
         </div>
 
+        
+        
+        <div class="d-flex justify-content-center flex-wrap gap-2 text-center ">
+           
+            <table class="table table-dark table-responsive m-5">
 
+                </thead>
+                <thead>
+                    <tr>
+                        <th scope="col">Events with the highest percentage of atttendance</th>
+                        <th scope="col">Events with the highest percentage of atttendance</th>
+                        <th scope="col">Event with larger capacity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">#######</th>
+                        <td>#######</td>
+                        <td>#######</td>
 
-        <div class="d-flex justify-content-center align-items-center text-center m-md-4 flex-wrap gap-4 ">
+                    </tr>
+                    <tr>
+                        <th scope="row">#######</th>
+                        <td>#######</td>
+                        <td>#######</td>
 
-            <div class="card " style="width: 18rem;">
-                <img class="card-img-top card-img" src="./assets/Cinema.jpg" alt="img">
-                <div class="card-body">
-                    <h5 class="card-title">Event</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <img class="card-img-bottom mb-md-3" style="width: 45px;" src="./assets/icons8-boleto-50.png"
-                        alt="img">
-                    <a href="./details.html" class="btn btn-card">Details</a>
-                </div>
-            </div>
+                    </tr>
+                    <tr>
+                        <th scope="row">#######</th>
+                        <td>#######</td>
+                        <td>#######</td>
 
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top card-img" src="./assets/Costume_Party.jpg" alt="img">
-                <div class="card-body">
-                    <h5 class="card-title">Event</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <img class="card-img-bottom mb-md-3" style="width: 45px;" src="./assets/icons8-apple-music-50.png"
-                        alt="img">
-                    <a href="#" class="btn btn-card">Details</a>
-                </div>
-            </div>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-dark table-responsive m-5">
+                <thead>
+                    <tr>
+                        <th scope="col">Categories</th>
+                        <th scope="col">Revenues</th>
+                        <th scope="col">% of attendance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">#######</th>
+                        <td>#######</td>
+                        <td>#######</td>
 
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top card-img" src="./assets/Music_Concert.jpg" alt="img">
-                <div class="card-body">
-                    <h5 class="card-title">Event</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <img class="card-img-bottom mb-md-3" style="width: 45px;" src="./assets/icons8-apple-music-50.png"
-                        alt="img">
-                    <a href="#" class="btn btn-card">Details</a>
-                </div>
-            </div>
+                    </tr>
+                    <tr>
+                        <th scope="row">#######</th>
+                        <td>#######</td>
+                        <td>#######</td>
 
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top card-img" src="./assets/Random.jpg" alt="img">
-                <div class="card-body">
-                    <h5 class="card-title">Event</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <img class="card-img-bottom mb-md-3" style="width: 45px;"
-                        src="./assets/icons8-anillos-de-boda-50.png" alt="img">
-                    <a href="#" class="btn btn-card">Details</a>
-                </div>
-            </div>
+                    </tr>
+                    <tr>
+                        <th scope="row">#######</th>
+                        <td>#######</td>
+                        <td>#######</td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table table-dark table-responsive m-5">
+                <thead>
+                    <tr>
+                        <th scope="col">Categories</th>
+                        <th scope="col">Revenues</th>
+                        <th scope="col">% of attendance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">#######</th>
+                        <td>#######</td>
+                        <td>#######</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">#######</th>
+                        <td>#######</td>
+                        <td>#######</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">#######</th>
+                        <td>#######</td>
+                        <td>#######</td>
+
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
     </main>
@@ -157,8 +211,6 @@
             </div>
         </footer>
     </div>
-
-
 
 
 
