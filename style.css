@@ -51,13 +51,21 @@ body {
 
 .card {
     background-color: transparent !important;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .card-img {
     width: 100% !important;
     object-fit: cover;
     height: 10rem !important;
+}
+
+.card-body{
+    min-height: 10rem !important;
+}
+
+.card-text{
+    min-height: 5rem;
 }
 
 .btn-card {
