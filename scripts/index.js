@@ -1,24 +1,31 @@
 console.log("------- INDEX.js ------");
 
-let principal = document.getElementById("principal-div");
+const principal = document.getElementById("principal-div");
 let arrayDATA = data.events;
 
 //tomar categoria
 const checkContainer = document.getElementById("filter-div");
-const input = document.querySelector("input");
 
-input.addEventListener('input',superFiltro)
-checkContainer.addEventListener("change",superFiltro)
+
+
 
 //MAIN JS
 showCards(arrayDATA);
 crearCheckboxes(arrayDATA)
 
+
+const input = document.querySelector("input");
+const bar = document.getElementById("search");
 function superFiltro(){
-  let primerFiltro = filterTXT(arrayDATA,input.value)
-  let segundoFiltro = categoryFilter(primerFiltro)
+  let primerFiltro = filtrarPorTexto(arrayDATA,bar.value)
+  let segundoFiltro = categoryFilter(arrayDATA)
+  principal.innerHTML=" ";
   showCards(segundoFiltro)
 }
+
+input.addEventListener('input',superFiltro)
+checkContainer.addEventListener("change",superFiltro);
+
 
 function crearCheckboxes(array){
   let arrayFiltered = array.map(elemento => elemento.category)
@@ -32,43 +39,24 @@ function crearCheckboxes(array){
       }
       return 0
   }))
-  /* console.log(setCountries) */
-  /* let arrayCountriesNoRepeat = Array.from(setCountries) */
+
   let checks = ''
  setFiltred.forEach(element => {
   checks += `<div class="input-group-text h-1">
-  <input class="form-check-input mt-0" type="checkbox" value="${element}" aria-label="${element}">
+  <input id="${element}" class="form-check-input mt-0" type="checkbox" value="${element}" aria-label="${element}">
   <label for="${element}">${element}</label>
   </div> `//id elemento , label forr"elemento" value"elemento"  
-  console.log(element)
  })
- checkContainer.innerHTML = checks;
+ let bar = `<div class="form-floating ">
+ <input type="text" class="form-control" id="search" placeholder="Name">
+ <label class=" " for="floatingInput">Search</label>
+</div>`
+ checkContainer.innerHTML = checks + bar;
 }
 
 
-function filterTXT(array,txt){
-  let arrayFiltered = array.filter(element => element.category.toLowerCase().includes(txt.toLowerCase()))
-return arrayFiltered
-}
-
-
-
-function categoryFilter(array){
-  let checkboxes = Array.from(document.querySelectorAll("input[type='checkbox']"))  //selecc los checks
-  
-  let checksTrue = checkboxes.filter(check => check.checked) //filtra los ON
-  
-  if(checksTrue.length == 0){
-    return array
-}
-let categories = checksTrue.map(check => check.value)
-  let arrayFiltred = array.filter(elemento => categories.includes(elemento.category))
-  return arrayFiltred
-  
-  }
-
-  //Mostrar todas las tarjetas
-function showCards(array) {
+ //Mostrar todas las tarjetas
+ function showCards(array) {
   if(array.length == 0){
     principal.innerHTML = "<h4 class='display-1 fw-bolder'>No hay elementos coincidentes!</h4>"
     return
@@ -85,10 +73,36 @@ function showCards(array) {
            src="./assets/icons8-boleto-50.png" alt="img">    
        <a href="#" class="btn btn-card">Details</a>
    </div>
-   </div> `;
+   </div> `
   })
   principal.innerHTML += list;
 }
+
+function filtrarPorTexto(array, texto){
+  let arrayFiltrado = array.filter(elemento => elemento.name.toLowerCase().includes(texto.toLowerCase()))
+  return arrayFiltrado
+}
+
+function categoryFilter(array){
+  let checkboxes = Array.from(document.querySelectorAll("input[type='checkbox']"))  //selecc los checks
+  let checksTrue = checkboxes.filter(check => check.checked) //filtra los ON
+  
+  if(checksTrue.length == 0){
+    return array
+}
+let categ = checksTrue.map(check => check.value)
+  let arrayFiltred = array.filter(elemento => categ.includes(elemento.category))
+  console.log(arrayFiltred)
+  return arrayFiltred
+  }
+
+
+
+
+
+
+
+ 
 
 
 
