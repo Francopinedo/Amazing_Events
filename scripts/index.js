@@ -17,7 +17,7 @@ crearCheckboxes(arrayDATA)
 const input = document.querySelector("input");
 const bar = document.getElementById("search");
 function superFiltro(){
-  let primerFiltro = filtrarPorTexto(arrayDATA,bar.value)
+  let primerFiltro = filtrarPorTexto(arrayDATA,bar.textContent)
   let segundoFiltro = categoryFilter(arrayDATA)
   principal.innerHTML=" ";
   showCards(segundoFiltro)
@@ -79,7 +79,7 @@ function crearCheckboxes(array){
 }
 
 function filtrarPorTexto(array, texto){
-  let arrayFiltrado = array.filter(elemento => elemento.name.toLowerCase().includes(texto.toLowerCase()))
+  let arrayFiltrado = array.filter(elemento => elemento.category.toLowerCase().includes(texto.toLowerCase()))
   return arrayFiltrado
 }
 
