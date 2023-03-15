@@ -4,8 +4,6 @@ function showPastCards(data) {
   let list = "";
     for (const id of data.events) {
       if (data.currentDate > id.date ){
-        console.log(data.currentDate +" "+id.date);
-        console.log("encontro");
         list +=  ` <div class="card mh-30 m-2" style="width: 18rem;">
    <img class="card-img-top card-img" src="${id.image}" alt="img">
    <div class="card-body">

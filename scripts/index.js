@@ -16,16 +16,16 @@ crearCheckboxes(arrayDATA)
 
 const input = document.querySelector("input");
 const bar = document.getElementById("search");
+input.addEventListener('change',superFiltro)
+checkContainer.addEventListener("change",superFiltro);
 function superFiltro(){
-  let primerFiltro = filtrarPorTexto(arrayDATA,bar.textContent)
-  let segundoFiltro = categoryFilter(arrayDATA)
+  let primerFiltro = filtrarPorTexto(arrayDATA,bar.value)
+  console.log(primerFiltro)
+  let segundoFiltro = categoryFilter(primerFiltro)
+  console.log(segundoFiltro)
   principal.innerHTML=" ";
   showCards(segundoFiltro)
 }
-
-input.addEventListener('input',superFiltro)
-checkContainer.addEventListener("change",superFiltro);
-
 
 function crearCheckboxes(array){
   let arrayFiltered = array.map(elemento => elemento.category)

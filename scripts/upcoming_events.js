@@ -1,6 +1,19 @@
 
+
+
+
+
+
+
+let principal = document.getElementById("principal-div-upcoming");
+
+showUpcomingCards(data);
+crearCheckboxes(arrayDATA)
+
+
+
 function showUpcomingCards(data) {
-  let principal = document.getElementById("principal-div-upcoming");
+  
   let list = "";
     for (const id of data.events) {
       if (data.currentDate < id.date ){
@@ -20,4 +33,3 @@ function showUpcomingCards(data) {
   principal.innerHTML += list;
 }
 
-showUpcomingCards(data);
