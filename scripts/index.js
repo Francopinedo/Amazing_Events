@@ -47,9 +47,9 @@ function crearCheckboxes(array){
   <label for="${element}">${element}</label>
   </div> `//id elemento , label forr"elemento" value"elemento"  
  })
- let bar = `<div class="form-floating ">
- <input type="text" class="form-control" id="search" placeholder="Name">
- <label class=" " for="floatingInput">Search</label>
+ let bar = `<div class="form-control d-flex justify-content-center align-items-center text-top">
+ <input type="text" class="form-control" id="search" placeholder="Search">
+ <label class=" " for="floatingInput"></label>
 </div>`
  checkContainer.innerHTML = checks + bar;
 }

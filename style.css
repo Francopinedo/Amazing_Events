@@ -93,3 +93,25 @@ body {
 .tittle-text{
    font-size: 10vh;
 }
+
+.input-group-text,#search{
+ background-color: #FFC8C8 ;
+ color: #3E4149 !important ;
+ border-color: #FFC8C8 ;
+}
+
+
+#search{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #FFC8C8 !important;
+    padding: 0%;
+}
+
+#search::placeholder{
+    color: #3E4149 !important ;
+}
+
+.form-control{
+    background-color: #FFC8C8 !important;
+}
