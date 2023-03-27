@@ -1,35 +1,36 @@
 console.log("------- INDEX.js ------");
 
 const principal = document.getElementById("principal-div");
-let arrayDATA = data.events;
-
 //tomar categoria
 const checkContainer = document.getElementById("filter-div");
 
-
-
-
 //MAIN JS
-showCards(arrayDATA);
-crearCheckboxes(arrayDATA)
+fetch("https://mindhub-xj03.onrender.com/api/amazing")
+.then(response => response.json())
+.then (data => {
+ let arrayData = data.events;
+  
+showCards(arrayData);
+crearCheckboxes(arrayData)
 
 
 const input = document.querySelector("input");
 const bar = document.getElementById("search");
 input.addEventListener('change',superFiltro)
 checkContainer.addEventListener("change",superFiltro);
+
 function superFiltro(){
-  let primerFiltro = filtrarPorTexto(arrayDATA,bar.value)
-  console.log(primerFiltro)
+  let primerFiltro = filtrarPorTexto(arrayData,bar.value)
   let segundoFiltro = categoryFilter(primerFiltro)
-  console.log(segundoFiltro)
+  
   principal.innerHTML=" ";
   showCards(segundoFiltro)
 }
 
+
 function crearCheckboxes(array){
   let arrayFiltered = array.map(elemento => elemento.category)
-  /* console.log(arrayCountries) */
+  
   let setFiltred = new Set(arrayFiltered.sort((a,b)=>{
       if(a<b){
           return -1
@@ -79,7 +80,7 @@ function crearCheckboxes(array){
 }
 
 function filtrarPorTexto(array, texto){
-  let arrayFiltrado = array.filter(elemento => elemento.category.toLowerCase().includes(texto.toLowerCase()))
+  let arrayFiltrado = array.filter(elemento => elemento.name.toLowerCase().includes(texto.toLowerCase()))
   return arrayFiltrado
 }
 
@@ -92,19 +93,23 @@ function categoryFilter(array){
 }
 let categ = checksTrue.map(check => check.value)
   let arrayFiltred = array.filter(elemento => categ.includes(elemento.category))
-  console.log(arrayFiltred)
   return arrayFiltred
   }
 
+})
 
 
 
 
+// const api_url = "https://mindhub-xj03.onrender.com/api/amazing";
 
-
- 
-
-
-
-
+// async function getData(api_url) {
+//   try {
+//     const response = await fetch(api_url);
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
