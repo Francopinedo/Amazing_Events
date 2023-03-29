@@ -56,10 +56,27 @@ body {
     font-size: 1rem;
 }
 
+.card_detail {
+    background-color: transparent !important;
+    font-size: 1.3rem;
+}
+
+.card-img_detail {
+    width: 100% !important;
+    object-fit: cover;
+    height: 15rem !important;
+    
+}
+
 .card-img {
     width: 100% !important;
     object-fit: cover;
     height: 10rem !important;
+}
+
+.card-body_detail{
+    min-height: 10rem !important;
+    width: 60rem  !important;
 }
 
 .card-body{
@@ -92,6 +109,11 @@ body {
 
 .tittle-text{
    font-size: 10vh;
+}
+
+.text-detail{
+    margin: 1vh !important;
+    color: #FFC8C8;
 }
 
 .input-group-text,#search{

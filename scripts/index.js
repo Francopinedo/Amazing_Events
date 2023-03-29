@@ -4,6 +4,7 @@ const principal = document.getElementById("principal-div");
 //tomar categoria
 const checkContainer = document.getElementById("filter-div");
 
+
 //MAIN JS
 fetch("https://mindhub-xj03.onrender.com/api/amazing")
 .then(response => response.json())
@@ -72,7 +73,7 @@ function crearCheckboxes(array){
        <p class="card-text ">${e.description}</p>
        <img class="card-img-bottom mb-md-3" style="width: 45px;"
            src="./assets/icons8-boleto-50.png" alt="img">    
-       <a href="#" class="btn btn-card">Details</a>
+       <a href="./details.html?id=${e._id}" class="btn btn-card">Details</a>
    </div>
    </div> `
   })
